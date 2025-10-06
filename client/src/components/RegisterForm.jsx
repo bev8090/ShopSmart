@@ -26,7 +26,7 @@ const RegisterForm = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/register", {username, email, password}, {withCredentials: true});
+      const res = await axios.post("https://shopsmart-server-44g8.onrender.com/api/users/register", {username, email, password}, {withCredentials: true});
       setUser(res.data.user);
       toast.success("Your account has been created successfully.");
 
