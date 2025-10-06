@@ -13,7 +13,7 @@ const OrderHistory = () => {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/orders/${user.userId}`, { withCredentials: true });
+        const res = await axios.get(`https://shopsmart-server-44g8.onrender.com/api/orders/${user.userId}`, { withCredentials: true });
         setOrders(res.data);
       } catch (error) {
         console.log("Failed to retrieve orders for user: ", error.message);
