@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/users/logout", {}, { withCredentials: true });
+      await axios.post("https://shopsmart-server-44g8.onrender.com/api/users/logout", {}, { withCredentials: true });
       setUser(null);
       toast.success("Logged out successfully");
     } catch (error) {
