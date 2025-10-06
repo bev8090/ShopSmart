@@ -54,7 +54,7 @@ const ModifyProductPage = () => {
     try {
       setLoading(true);
 
-      await axios.put(`http://localhost:5000/api/products/${id}`, { name, price: parsedPrice, image, description, category: lowerCategory, countInStock });
+      await axios.put(`https://shopsmart-server-44g8.onrender.com/api/products/${id}`, { name, price: parsedPrice, image, description, category: lowerCategory, countInStock });
       toast.success("Product updated successfully!");
       navigate("/admin");
     } catch (error) {
@@ -75,7 +75,7 @@ const ModifyProductPage = () => {
     e.preventDefault();
 
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`https://shopsmart-server-44g8.onrender.com/api/products/${id}`);
       toast.success("Product successfully deleted!");
       navigate("/admin");
     } catch (error) {

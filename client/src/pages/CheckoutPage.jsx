@@ -79,7 +79,7 @@ const CheckoutPage = () => {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://localhost:5000/api/checkout/create-payment-intent", { cartItems: cart }, { withCredentials: true });
+      const res = await axios.post("https://shopsmart-server-44g8.onrender.com/api/checkout/create-payment-intent", { cartItems: cart }, { withCredentials: true });
 
       const result = await stripe.confirmCardPayment(res.data.clientSecret, {
         payment_method: {
@@ -96,7 +96,7 @@ const CheckoutPage = () => {
         totalAmount += 5.99; // Shipping Cost
         totalAmount = totalAmount.toFixed(2);
 
-        await axios.post("http://localhost:5000/api/orders", { userId: user.userId, cartItems: cart, totalAmount, paymentId: result.paymentIntent.id, shipping: { name, address, city, postalCode } }, { withCredentials: true });
+        await axios.post("https://shopsmart-server-44g8.onrender.com/api/orders", { userId: user.userId, cartItems: cart, totalAmount, paymentId: result.paymentIntent.id, shipping: { name, address, city, postalCode } }, { withCredentials: true });
         toast.success("Order successfully submitted!");
 
         localStorage.removeItem("cart");

@@ -15,7 +15,7 @@ const CategoryPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/${category}`);
+        const res = await axios.get(`https://shopsmart-server-44g8.onrender.com/api/products/${category}`);
         setProducts(res.data);
       } catch (error) {
         console.log("Error in fetching products", error);

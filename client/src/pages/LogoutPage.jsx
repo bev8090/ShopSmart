@@ -8,7 +8,7 @@ const LogoutPage = () => {
 
   const logOut = async () => {
     try {
-      await axios.post("http://localhost:5000/api/users/logout",{}, {withCredentials: true});
+      await axios.post("https://shopsmart-server-44g8.onrender.com/api/users/logout",{}, {withCredentials: true});
       setSuccess(true);
     } catch (error) {
       console.log("Error with logout", error);

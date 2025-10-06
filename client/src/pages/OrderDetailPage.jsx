@@ -19,7 +19,7 @@ const OrderDetailPage = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/orders/order/${id}`, { withCredentials: true });
+        const res = await axios.get(`https://shopsmart-server-44g8.onrender.com/api/orders/order/${id}`, { withCredentials: true });
         setOrder(res.data);
       } catch (error) {
         console.log("Error in retrieving order", error);

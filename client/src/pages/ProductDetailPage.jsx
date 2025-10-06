@@ -21,7 +21,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/product/${id}`);
+        const res = await axios.get(`https://shopsmart-server-44g8.onrender.com/api/products/product/${id}`);
         setProduct(res.data);
       } catch (error) {
         console.log("Error in retrieving product", error);

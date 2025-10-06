@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const authenticate = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/users/profile`, {withCredentials: true});
+        const res = await axios.get(`https://shopsmart-server-44g8.onrender.com/api/users/profile`, {withCredentials: true});
 
         if(res.ok){
           setUser(res.data);

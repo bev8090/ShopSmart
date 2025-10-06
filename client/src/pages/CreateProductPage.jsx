@@ -40,7 +40,7 @@ const CreateProductPage = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/products", { name, price: parsedPrice, image, description, category: lowerCategory, countInStock });
+      await axios.post("https://shopsmart-server-44g8.onrender.com/api/products", { name, price: parsedPrice, image, description, category: lowerCategory, countInStock });
       toast.success("Product created successfully!");
       navigate("/admin");
     } catch (error) {
