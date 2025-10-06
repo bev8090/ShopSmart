@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5001;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:5173', credentials: true })); // Send cookies in the response from express app
+app.use(cors({ origin: 'https://shopsmart-client.onrender.com', credentials: true })); // Send cookies in the response from express app
 
 app.get("/", (_, res) => res.send("<h1>API in Service</h1>"));
 app.use("/api/products", productsRoutes);
